@@ -19,4 +19,4 @@ compile:
 eunit:
     stage: test
     script:
-        - rebar3 eunit -v
+        - ./rebar3 eunit -v
