@@ -9,8 +9,14 @@ before_script:
     
 stages:
     - build
+    - test
     
 compile:
     stage: build
     script: 
         - make
+
+eunit:
+    stage: test
+    script:
+        - rebar3 eunit -v
