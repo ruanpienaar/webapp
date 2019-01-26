@@ -1,0 +1,13 @@
+{application, webapp,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+                  cowboy
+                 ]},
+  {mod, { webapp_app, []}},
+  {env, []}
+ ]}.
