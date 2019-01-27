@@ -7,7 +7,7 @@ before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
 
 variables:
-    TEST_IMAGE: registry.gitlab.com/rpienaar/webapp::$CI_COMMIT_REF_NAME
+    TEST_IMAGE: registry.gitlab.com/rpienaar/webapp:$CI_COMMIT_REF_NAME
     
 stages:
     - build
