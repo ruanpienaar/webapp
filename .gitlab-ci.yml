@@ -15,5 +15,5 @@ stages:
 build:
     stage: build
     script:
-        - docker build --pull -t $TEST_IMAGE .
+        - docker build -t $TEST_IMAGE .
         - docker push $TEST_IMAGE
