@@ -4,6 +4,8 @@
     start_link/0
 ]).
 
+-spec start_link() -> {ok, pid()}.
+
 start_link() ->
     cowboy_startup().
 
