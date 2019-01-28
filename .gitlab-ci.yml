@@ -32,7 +32,7 @@ common_test:
     stage: test
     script:
         - docker pull $TEST_IMAGE
-        - docker run $TEST_IMAGE /root/webapp/rebar3 ct -v
+        - docker run $TEST_IMAGE /root/webapp/run_ct.sh
 
 dialyzer:
     stage: check
