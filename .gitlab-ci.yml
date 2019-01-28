@@ -11,6 +11,8 @@ variables:
     
 stages:
     - build
+    - test
+    - check
     
 build:
     stage: build
@@ -19,3 +21,21 @@ build:
         - docker info
         - docker build -t $TEST_IMAGE .
         - docker push $TEST_IMAGE
+
+eunit:
+    stage: test
+    script:
+        - docker pull $TEST_IMAGE
+        - docker run $TEST_IMAGE /root/webapp/rebar3 eunit -v
+
+common_test:
+    stage: test
+    script:
+        - docker pull $TEST_IMAGE
+        - docker run $TEST_IMAGE /root/webapp/rebar3 ct -v
+
+dialyzer:
+    stages: check
+    script:
+        - docker pull $TEST_IMAGE
+        - docker run $TEST_IMAGE /root/webapp/rebar3 dialyzer
