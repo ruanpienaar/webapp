@@ -19,8 +19,11 @@ RUN wget https://raw.githubusercontent.com/kerl/kerl/master/kerl -O /usr/bin/ker
 
 RUN apk add g++ openssl-dev perl ncurses ncurses-dev
     
-RUN kerl build 21.2 21.2
+RUN kerl build 21.2 21.2 &&\
+    mkdir -p /root/erlang/21.2 &&\
+    kerl install 21.2 /root/erlang/21.2 &&\
+    echo ". /root/erlang/21.2/activate" >> ~/.bashrc
 
-RUN cd /root/webapp &&\
-    make &&\
-    ./rebar3 eunit -v
+RUN . /root/erlang/21.2/activate &&\
+    cd /root/webapp &&\
+    make
