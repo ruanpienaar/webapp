@@ -1,4 +1,5 @@
 FROM registry.hub.docker.com/ruanpienaar/alpine-linux-erlang:21_2
+RUN apk add git
 #TODO find a smarter way of inclunding * into /root/X/
 ADD apps /root/webapp/apps
 ADD config /root/webapp/config
