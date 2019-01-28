@@ -1,4 +1,4 @@
-FROM registry.hub.docker.com/library/ruanpienaar/alpine-linux-erlang
+FROM registry.hub.docker.com/ruanpienaar/alpine-linux-erlang:21_2
 
 #TODO find a smarter way of inclunding * into /root/X/
 ADD apps /root/webapp/apps
