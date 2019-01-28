@@ -35,7 +35,7 @@ common_test:
         - docker run $TEST_IMAGE /root/webapp/rebar3 ct -v
 
 dialyzer:
-    stages: check
+    stage: check
     script:
         - docker pull $TEST_IMAGE
         - docker run $TEST_IMAGE /root/webapp/rebar3 dialyzer
