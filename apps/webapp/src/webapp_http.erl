@@ -4,7 +4,7 @@
     start_link/0
 ]).
 
--spec start_link() -> {ok, pid()}.
+% -spec start_link() -> {ok, pid()}.
 
 start_link() ->
     cowboy_startup().
@@ -25,6 +25,7 @@ cowboy_startup() ->
         }
     ).
 
+% -spec routes() -> list({term(), atom(), term()}).
 routes() ->
     [
         {"/", 

@@ -11,7 +11,8 @@
 %% Application callbacks
 %% ===================================================================
 
--spec start(term(), term()) -> {ok, pid()}.
+% -spec start(StartType :: application:start_type(), StartArgs :: term()) ->
+%     {'ok', pid()} | {'error', Reason :: term()}.
 start(_StartType, _StartArgs) ->
     webapp_sup:start_link().
 

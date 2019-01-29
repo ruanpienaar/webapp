@@ -10,11 +10,15 @@
 
 -include("webapp.hrl").
 
+% -type startlink_err() :: {'already_started', pid()}
+%                          | {'shutdown', term()}
+%                          | term().
+
 %% ===================================================================
 %% API functions
 %% ===================================================================
 
--spec start_link() -> {ok, pid()}.
+% -spec start_link() -> {'ok', pid()} | {'error', startlink_err()}.
 
 start_link() ->
     supervisor:start_link({local, ?MODULE}, ?MODULE, []).
@@ -23,7 +27,7 @@ start_link() ->
 %% Supervisor callbacks
 %% ===================================================================
 
--spec init(list()) -> {ok, {supervisor:sup_flags(), list(supervisor:child_spec())}}.
+% -spec init(list()) -> {ok, {supervisor:sup_flags(), list(supervisor:child_spec())}}.
 
 init([]) ->
     {ok, 
