@@ -38,7 +38,7 @@ dialyzer:
     stage: check
     script:
         - docker pull $TEST_IMAGE
-        - docker run $TEST_IMAGE /root/webapp/rebar3 dialyzer
+        - docker run $TEST_IMAGE /root/webapp/rebar3 compile dialyzer
 
 xref:
     stage: check
