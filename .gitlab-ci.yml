@@ -38,10 +38,10 @@ dialyzer:
     stage: check
     script:
         - docker pull $TEST_IMAGE
-        - docker run $TEST_IMAGE /root/webapp/rebar3 compile dialyzer
+        - docker run $TEST_IMAGE /root/webapp/run_dialyzer.sh
 
 xref:
     stage: check
     script:
         - docker pull $TEST_IMAGE
-        - docker run $TEST_IMAGE /root/webapp/rebar3 xref
+        - docker run $TEST_IMAGE /root/webapp/run_xref.sh
