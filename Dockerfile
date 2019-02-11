@@ -12,6 +12,6 @@ ADD rebar.config /root/webapp/rebar.config
 ADD run_ct.sh /root/webapp/run_ct.sh
 ADD run_dialyzer.sh /root/webapp/run_dialyzer.sh
 ADD run_xref.sh /root/webapp/run_xref.sh
-RUN cd /root/webapp &&\
-    make
+RUN cd /root/webapp && make
+RUN ls -lR /root/webapp
 EXPOSE 54321
